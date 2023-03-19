@@ -1,0 +1,208 @@
+1.what is an XML?
+ Xml is a file format just like text, json, HTML e.tc
+
+ <project>
+     <message>"heelo world"</message>
+ </project>
+
+
+ an example for json :
+
+ {
+    "project":"project1",
+    "message":"hello world"
+
+ }
+
+ a text file:
+
+ the project is project1 and the message is hello world;
+
+
+
+
+
+POM.xml:
+
+<project>
+<version> </version>
+
+   <dependencies>
+
+
+   </dependencies>
+
+
+</project>
+
+
+1.Maven project:
+simply click on new project
+select maven from options
+and create a new project with a name
+
+maven porject saves you from hustle of adding dependencies like u do in java project (adding jasrs manually)
+in maven you can mention the dependency that u need from maven repo
+add it in the POM.xml
+reload the project
+and it is there for you to use.
+
+    <dependencies>
+        <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>5.1.0</version>
+        </dependency>
+    </dependencies>
+
+
+--------------------------------------------testNG---------------------------
+
+Test is a tool,
+it can be used to unit test, integration test e.t.c
+no mian needed if u are working with testNG
+
+
+Annotations:
+
+1.@Test:
+All the test cases must be written down under the annotation of @Test.
+
+
+whenever u run a class , it is going to execute each and every method under the annotation of
+@Test.
+
+by deafult @Test annotation follows alphabetical order of execution of the test cases
+
+e.g public void atestcase(); --> will execute first
+    public void btestcase();-->will execute second
+
+    the geeen tick indicates that test case has passed
+    the red sign idnicates the test case has failed
+
+
+
+@BeforeMethod annotation:
+
+the code under this annotation is going to execute everytime before each and every @Test execution is made
+
+
+
+@AfterMethod annotation :
+
+the code under this annotation is going to execute after every test Method (after every @TEST)
+
+
+Assertions:
+we are not using if else condition because even if the test case fails (i.e the conditon doesnt pass in if)
+the testNG will still show it has passed
+in order to overcome that we use
+Assertions from testNG
+the library is Assert
+and we call differnet types of assertions from it
+
+first assertion that we learned is
+1.Assert.AssertEquals(String , String)
+it comapres two strings if they are equal test case passed else fails.
+
+2.Assert.AssetTrue(boolean)-->if the boolean is True the Assertion will pass
+								if the boolean is false the assertion will fail
+
+
+1.HardAssertions
+As soon as any assertion FAIlS it doesnt check for other assertions , marks the test as failed and quits
+
+
+Assert.Assertequals(Expected value,Actual Value)-->if they are equal your test case will pass
+`												--> if they are not equal your test case is going to FAIL
+
+
+***********************Review***********************
+
+
+1.Pom.xml
+
+all our dependencies
+
+<dependencies>
+
+
+
+
+</dependencies>
+
+
+when we want to load the dependcies as there are red errors?
+ we right click and reload the maven
+
+
+
+ 2.Annotations:
+
+ 1.@Test:
+         every test case is written is @Test annotation
+         when ever we run a class all @Test annotaitons will be executed
+         we can also run them indivdually
+
+
+
+ 2.@BeforeMethod:
+ 			pre condition and will execute always before the @Test annotaion
+
+
+ 3.@AfterMethod:
+
+ 			post-conditon and will execute always after @Test annotation
+
+
+
+
+ 3.Priority:
+
+
+ by defualt: 0   is the highest
+   @Test(priority=1)
+
+pritotiy flows in this order
+   0,1,2,3,4,5,6,7,8-->
+
+
+4.Enable and disable:
+
+
+@Test(enabled=false)
+
+will mark the test case as disabled adn will not be part of the execution
+
+
+by default enabled=true;
+
+
+
+
+5.Depends on:
+
+@Test(dependsonMethod={method name})
+
+the test case is dependent on another test case and if the major test case fails the it will not execute it
+
+
+
+
+6.Assertion:
+
+Hard assertions:
+
+1.Assert.assertEquals(string,string)---> compares two strings, if they are equal the assertion will pass
+if not equal the assertion will fail.
+
+2. Assert.assertTrue(boolean)--> will fail if boolean false, will pass if boolean is true.
+
+
+Note:
+
+if any assertion in ncase of hard assertions fails, the code doesnt proceed on with execution , it terminates there and
+marks the test case as a failed test case.
+
+
