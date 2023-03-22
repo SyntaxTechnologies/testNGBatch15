@@ -1,0 +1,51 @@
+
+
+2.SoftAssertions:
+
+Soft asseertion will execute all assertions that are there despite of the fact that they FAIL or PASS
+and once it has evaluated them all then it will mark the test case as
+Failed or Passed
+(it marks it failed even if one assertion has failed)
+
+The advantage of using soft asssert is that we can
+see what errors we are having in other assertions that we make in the same test case
+but we cant see them if we use hardassertion as IT WILL EXIT AS SOON AS THE FIRST ASSERTION FAILS
+
+method to implement:
+1. delcare the instance
+softAssert soft =new softAssert();
+2.make assertions
+
+soft.assertEquals();
+
+3. at the end of makiing all assertions
+you must do
+soft.assertALL()
+
+this evalutes wether the test case has to be marked passed or failed
+
+---------Data Provider-----------
+Used for dataDriven testing
+ DataProviders in TestNG are another way to pass the parameters in the test function. DataProviders pass different values to the TestNG Test Case in a single execution
+@DataProvider
+
+--> we provide our data under this annotations and should name our data provider @DataProvider(name="abc")
+
+-->in which ever test case we want to use this data we simply link the data provider to that test case
+  @Test(dataprovider="abc")
+
+//dataprovider -->use it when u have small data
+in case of larger data use excel file
+
+
+if we want our test case to utilize this dataprovider
+what do we need to do?
+@test(dataprovider ="name of dataprovider")
+public void test(){
+
+
+}
+
+
+
+
