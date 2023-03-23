@@ -1,0 +1,127 @@
+whenever u want to create a testNg XML
+
+
+Approach is
+1.make sure the XML file is installed
+      goto file--> prefrences     (intellijidea--> prefrences)
+      plugins---> marketplace --> TestNgXML and install--> apply ok
+
+
+
+testng xml file for a particular class
+
+1. right click the or the class --> choose option  create testNg xml
+2. then click OK
+3.right click on the Project and select the option reload from disk.
+
+
+In a testNg XML file
+
+we have a structure
+
+<suite>
+		<test name="abc">
+				<classes>
+						<class name=  > </class>
+						<class name=  > </class>
+
+				</classes>
+		</test>
+
+</suite>
+
+
+
+
+1.XML file
+a. Class wise execution
+
+ we can control which classes to execute
+ <suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="mytest">
+        <classes>
+            <class name="class01.priority"></class>
+            <class name="class02.dataProvider"></class>
+            <class name="class01.AssertionBasic"></class>
+        </classes>
+    </test>
+</suite>
+
+
+
+b.Method wise Execution
+  in order to include a mthod simply use the tag name  "include"
+  in order to not run a method just use the tag name   "exclude"
+
+
+
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="abracadabra">
+       <classes>
+           <class name="class01.priority">
+               <methods>
+                   <include name="Atest"></include>
+                   <include name="Btest"/>
+                   <exclude name="Ctest"/>
+               </methods>
+           </class>
+       </classes>
+    </test>
+</suite>
+
+
+
+
+
+c.Package wise execution
+
+u can run the whole package i.e all the classes included in that package
+
+
+<suite name="custom-fit">
+    <test verbose="2" preserve-order="true" name="bran">
+        <packages>
+            <package name="class01"></package>
+        </packages>
+    </test>
+</suite>
+
+
+d.group wise execution
+
+regression group--> will consist of all the test cases included in regression testing
+
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="regression group">
+         <groups>
+             <run>
+                 <include name="regression"/>
+             </run>
+         </groups>
+        <packages>
+            <package name="class01"></package>
+        </packages>
+    </test>
+</suite>
+
+Note"
+when ever u are marking a test case in a group, and that test case has
+a before and after method
+make sure to mark it as (alwaysRun=true) other wise those pre-post cond are not going to run
+
+beforemethod(alwaysRun=true)
+
+
+
+
+-----------parallel testing-------------------
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="parallel" parallel="classes" thread-count="4">
+      <classes>
+          <class name="class01.AssertionBasic"></class>
+          <class name="class02.softAssertionExample"></class>
+      </classes>
+    </test>
+</suite>
+
+----------------------------------------------------------------------------------------------------------

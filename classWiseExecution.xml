@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/moazzam/Desktop/testngProjects/testNGBasicsBatch15/src/test/java/class01/testNGannotations.java">
+        <classes>
+            <class name="class01.priority"></class>
+            <class name="class02.dataProvider"></class>
+            <class name="class01.AssertionBasic"></class>
+        </classes>
+    </test>
+</suite>

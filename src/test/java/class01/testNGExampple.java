@@ -21,7 +21,7 @@ public  static WebDriver driver;
 
 //   pre conditions---> to open the browser
 //                      to set implcit wait
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public  void SetupBrowser(){
         WebDriverManager.chromedriver().setup();
        driver = new ChromeDriver();
@@ -31,7 +31,7 @@ public  static WebDriver driver;
     }
 
 //    post-condition--> to  close the browser
-    @AfterMethod
+    @AfterMethod(alwaysRun = true)
     public void closeBrowser() throws InterruptedException {
         Thread.sleep(5000);
         driver.quit();
@@ -39,7 +39,7 @@ public  static WebDriver driver;
 
 //    test case 1
 //    verofy login functionality
-    @Test
+    @Test(groups = "regression")
     public  void loginFunctionality(){
         WebElement username = driver.findElement(By.xpath("//input[@name='txtUsername']"));
         username.sendKeys("Admin");
