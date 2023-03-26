@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/moazzam/Desktop/testngProjects/testNGBasicsBatch15/src/test/java/class04/anootations02.java">
+     <classes>
+         <class name="class04.anootations02"></class>
+         <class name="class04.annotationsBeforeClass"></class>
+     </classes>
+    </test>
+    
+   <test name="abc">
+       <packages>
+           <package name="class04"></package>
+       </packages>
+   </test>
+</suite>

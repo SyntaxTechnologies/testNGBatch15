@@ -41,7 +41,7 @@ public static WebDriver driver;
         WebElement error = driver.findElement(By.xpath("//span[text()='Username cannot be empty']"));
         String actualError = error.getText();
 //     string that contains my expected error
-        String expectedError="Username cannot be empt";
+        String expectedError="Username cannot be empty";
 
 //        for soft assertion
         SoftAssert soft= new SoftAssert();
